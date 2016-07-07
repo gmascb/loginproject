@@ -16,22 +16,22 @@
                   <li><%= link_to "Registrar", new_user_path%></li>
                   <% end %>
                 </ul>
-              </li>
-              <li>
-                <% if current_user %>
-                <a>Cadastros</a>
-                <ul>
-                  <li><a href="#">Carros</a></li>
-                  <li><a href="#">Contas</a></li>
-                </ul>
-                <% end %>
-              </li>
-              <li>
-                <% if current_user %>
-                <%= link_to "Sair", logout_path%>
-                <% end %>
-              </li>
-          </ul>
+                </li>
+                <li>
+                  <% if current_user %>
+                  <a>Cadastros</a>
+                  <ul>
+                    <li><a href="#">Carros</a></li>
+                    <li><a href="#">Contas</a></li>
+                  </ul>
+                  <% end %>
+                </li>
+                <li>
+                  <% if current_user %>
+                  <%= link_to "Sair", logout_path%>
+                  <% end %>
+                </li>
+              </ul>
           </tr>
         </table>
 </body>

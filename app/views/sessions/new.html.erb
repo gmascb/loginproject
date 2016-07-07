@@ -10,8 +10,12 @@
     <%= text_field_tag :email%><br />
     <%= label_tag "Senha:"%><br />
     <%= password_field_tag :password%><br />
-
-    <%=submit_tag "Log In" %>
+    <%= submit_tag "Log In" %>
+    
+    <% if current_user %>
+    <p>Redirecionando...</p>
+      <meta http-equiv="refresh" content="0;url = page/index">
+    <% end %>
   </div>
   <% end %>
 </body>
