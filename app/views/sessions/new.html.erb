@@ -5,15 +5,12 @@
 </head>
 <body>
   <%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag "E-mail"%>
-    <%= text_field_tag :email%>
-  </div>
-  <div class="field">
-    <%= label_tag "Senha" %>
-    <%= password_field_tag :password%>
-  </div>
-  <div class="actions">
+  <div class="form">
+    <%= label_tag "E-mail:"%><br />
+    <%= text_field_tag :email%><br />
+    <%= label_tag "Senha:"%><br />
+    <%= password_field_tag :password%><br />
+
     <%=submit_tag "Log In" %>
   </div>
   <% end %>
