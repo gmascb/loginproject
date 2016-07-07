@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>Benaia Motors</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <table style="width:100%">
+    <tr>
+      <td>
+        <html>
+          <head>
+            <link rel="stylesheet" type="text/css"  href="application.css" /> 
+          </head>
+          <body>
+            <ul id="nav">
+              <li><%= link_to "Home", page_index_path %></li>
+              <li> <a>Login</a>
+              <ul>
+                <% if current_user %>
+                <% else %>
+                <li><%= link_to "Login", new_session_path %></li>
+                <li><%= link_to "Registrar", new_user_path%></li>
+                <% end %>
+              </ul>
+              </li>
+              <li>
+                <% if current_user %>
+                <a>Cadastros</a>
+                <ul>
+                  <li><a href="#">Carros</a></li>
+                  <li><a href="#">Contas</a></li>
+                </ul>
+                <% end %>
+              </li>
+              <li>
+                <% if current_user %>
+                <%= link_to "Sair", logout_path%>
+                <% end %>
+              </li>
+            </ul>
+          </td>
 
-<div id="user_header">
-  <% if current_user %>
-    Logged in as <%= current_user.email%>
-    <%= link_to "Log Out", logout_path%>
-  <% else %>
-  <%= link_to "Sign Up", signup_path%> or
-  <%= link_to "Log In", login_path%>
-  <% end %>
-</div>
+        </tr>
+      </table>
 
-<% flash.each do |key, value| %>
-  <%= content_tag(:div, class:  "alert alert-#{key}") do %>
-    <p><%= value %></p>
-  <% end %>
-<% end %>
-<%= yield %>
 
-</body>
+
+    <%= yield %>
+  </body>
 </html>

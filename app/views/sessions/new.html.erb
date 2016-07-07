@@ -1,16 +1,20 @@
 <h1>Log-in</h1>
 
-<%= form_tag sessions_path do %>
-<div class="field">
-  <%= label_tag :email%>
-  <%= text_field_tag :email%>
-</div>
-<div class="field">
-  <%= label_tag :password%>
-  <%= password_field_tag :password%>
-</div>
-<div class="actions">
-  <%=submit_tag "Log In" %>
-</div>
-
-<% end %>
+<head>
+  <link rel="stylesheet" href="app/stylesheets/sessions.css">
+</head>
+<body>
+  <%= form_tag sessions_path do %>
+  <div class="field">
+    <%= label_tag "E-mail"%>
+    <%= text_field_tag :email%>
+  </div>
+  <div class="field">
+    <%= label_tag "Senha" %>
+    <%= password_field_tag :password%>
+  </div>
+  <div class="actions">
+    <%=submit_tag "Log In" %>
+  </div>
+  <% end %>
+</body>
