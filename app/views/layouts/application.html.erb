@@ -5,8 +5,34 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <link rel="stylesheet" type="text/css"  href="application.scss" /> 
   </head>
   <body>
-    <%= yield %>
+    <% if current_user %>
+    <table style="width:100%">
+      <tr>
+        <td>
+          <ul id="nav">
+            <li><%= link_to "Home", page_index_path %></li>
+            <li><%= link_to "Usuários", users_path %></li>
+              <li>
+                <% if current_user %>
+                <a>Cadastros</a>
+                <ul>
+                  <li><a href="#">Carros</a></li>
+                  <li><a href="#">Contas</a></li>
+                </ul>
+                <% end %>
+              </li>
+              <li>
+                <% if current_user %>
+                <%= link_to "Sair", logout_path%>
+                <% end %>
+              </li>
+          </ul>
+          </tr>
+        </table>
+        <% end %>
+     <%= yield %>
   </body>
 </html>

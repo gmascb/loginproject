@@ -3,37 +3,6 @@
     <link rel="stylesheet" type="text/css"  href="mainMenu.css" /> 
   </head>
   <body>
-    <table style="width:100%">
-      <tr>
-        <td>
-          <ul id="nav">
-            <li><%= link_to "Home", page_index_path %></li>
-              <li> <a>Login</a>
-                <ul>
-                  <% if current_user %>
-                  <% else %>
-                  <li><%= link_to "Login", new_session_path %></li>
-                  <li><%= link_to "Registrar", new_user_path%></li>
-                  <% end %>
-                </ul>
-              </li>
-              <li>
-                <% if current_user %>
-                <a>Cadastros</a>
-                <ul>
-                  <li><a href="#">Carros</a></li>
-                  <li><a href="#">Contas</a></li>
-                </ul>
-                <% end %>
-              </li>
-              <li>
-                <% if current_user %>
-                <%= link_to "Sair", logout_path%>
-                <% end %>
-              </li>
-          </ul>
-          </tr>
-        </table>
 </body>
 </html>
         
